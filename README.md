@@ -1,13 +1,14 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
+[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/lemon3/birthdaypicker">
-    <img src="https://raw.githubusercontent.com/lemon3/birthdaypicker/main/_assets/images/logo.svg" alt="Logo" width="360" height="auto">
+    <img src="https://raw.githubusercontent.com/lemon3/zero2one/main/_assets/images/zero2one.svg" alt="Logo" width="360" height="auto">
   </a>
   <h3 align="center">a small animation helper</h3>
 </div>
@@ -68,5 +69,9 @@ Project Link: [https://github.com/lemon3/zero2one](https://github.com/lemon3/zer
 <div align="center">coded with ❤ in vienna<br>by wolfgang jungmayer</div>
 
 <!-- MARKDOWN LINKS & IMAGES -->
+
+[license-shield]: https://img.shields.io/github/license/lemon3/zero2one?style=for-the-badge
+[license-url]: https://github.com/lemon3/zero2one/blob/main/LICENSE
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/wolfgangjungmayer/
