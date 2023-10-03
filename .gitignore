@@ -1,0 +1,6 @@
+_notes
+.DS_Store
+.phpintel
+node_modules
+examples
+yarn.lock

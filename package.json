@@ -1,0 +1,47 @@
+{
+  "name": "zero2one",
+  "version": "0.1.0",
+  "description": "Animation, animates from 0 to 1 in a specific time with a defined acceleration (easing) function",
+  "keywords": [
+    "animation, tween, easing"
+  ],
+  "author": "Wolfgang Jungmayer",
+  "main": "zero2one.js",
+  "repository": "lemon3.at",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack serve --config config/webpack.dev.js",
+    "lint": "eslint 'src/**/*.js' || true",
+    "prettify": "prettier --write 'src/**/*.js'",
+    "dev": "webpack --mode development --watch --config config/webpack.dev.js",
+    "build": "webpack --mode production --config config/webpack.prod.js",
+    "browserslistupdate": "npx update-browserslist-db@latest"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "index.js",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.22.20",
+    "babel-loader": "^9.1.3",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.9.0"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.3"
+  }
+}
