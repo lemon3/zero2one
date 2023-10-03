@@ -35,6 +35,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 I started this project in 2012. Now I have completely rewritten the code.
+<div align="center">
+  <a href="https://github.com/lemon3/birthdaypicker">
+    <img src="https://raw.githubusercontent.com/lemon3/zero2one/main/_assets/images/demo.gif" alt="demo gif" width="280" height="auto">
+  </a>
+  <h3 align="center">a small animation helper</h3>
+</div>
 
 ### Features
 * Coded in vanilla JS.
