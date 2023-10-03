@@ -10,7 +10,7 @@
   <a href="https://github.com/lemon3/birthdaypicker">
     <img src="https://raw.githubusercontent.com/lemon3/zero2one/main/_assets/images/zero2one.svg" alt="Logo" width="360" height="auto">
   </a>
-  <h3 align="center">a small animation helper</h3>
+  <p align="center">a small animation helper</h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -37,9 +37,9 @@
 I started this project in 2012. Now I have completely rewritten the code.
 <div align="center">
   <a href="https://github.com/lemon3/birthdaypicker">
-    <img src="https://raw.githubusercontent.com/lemon3/zero2one/main/_assets/images/demo.gif" alt="demo gif" width="280" height="auto">
+    <img src="https://raw.githubusercontent.com/lemon3/zero2one/main/_assets/images/demo.gif" alt="demo gif" width="240" height="auto">
   </a>
-  <h3 align="center">a small animation helper</h3>
+  <p>small demo what you can do with zero2one</p>
 </div>
 
 ### Features
