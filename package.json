@@ -1,6 +1,6 @@
 {
   "name": "zero2one",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Animation, animates from 0 to 1 in a specific time with a defined acceleration (easing) function",
   "keywords": [
     "animation, tween, easing"
