@@ -151,7 +151,7 @@
             let z2o = new Zero2One();
             let end = +h.dataset.endval || 1;
             let start = +h.dataset.startval || 0;
-            let duration = +h.dataset.duration || 2;
+            let duration = +h.dataset.duration || 2000;
 
             const delta = end - start;
             z2o.start(duration, null, (propress) => {

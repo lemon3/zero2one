@@ -51,8 +51,34 @@ I started this project in 2012. Now I have completely rewritten the code.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-### First Steps
-tbd
+### Quickstart
+in your terminal
+```sh
+yarn add zero2one
+# or
+npm add zero2one
+```
+html element
+```html
+<div id="demo"></div>
+```
+javascript
+```js
+import Zero2One from "./node_modules/Zero2One/index.js";
+
+const demo = document.getElementById("demo");
+if (demo) {
+  const z2o = new Zero2One();
+  const start = 1900;
+  const end = 2023;
+  const duration = 2000;
+  const delta = end - start;
+
+  z2o.start(duration, 'Quad.easeIn', (propress) => {
+    demo.innerText = start + delta * propress << 0;
+  });
+}
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
