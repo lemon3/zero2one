@@ -63,7 +63,7 @@
         left: 0;
         width: 50px;
         height: 50px;
-      }</style></head><body><h1>zero2one</h1><h2>demo 1</h2><div><span>time: </span><span class="ani" data-startval="0" data-endval="1" data-duration="2000"></span></div><h2>demo 2</h2><div class="bars"><h3>Linear</h3><div class="bar"><div class="bar-inner bg-red" data-endval="100" data-ease="Linear" data-duration="2000"></div></div><h3>Quad.easeIn</h3><div class="bar"><div class="bar-inner bg-green" data-endval="100" data-ease="Quad.easeIn" data-duration="2000"></div></div><h3>Sine.easeOut</h3><div class="bar"><div class="bar-inner bg-blue" data-endval="100" data-ease="Sine.easeOut" data-duration="2000"></div></div><h3>Quad.easeOut</h3><div class="bar"><div class="bar-inner bg-yellow" data-endval="100" data-ease="Quad.easeOut" data-duration="2000"></div></div><h3>Cubic.easeOut</h3><div class="bar"><div class="bar-inner bg-pink" data-endval="100" data-ease="Cubic.easeOut" data-duration="2000"></div></div></div><h2>demo 32</h2><div class="box-wrapper"><div class="box bg-blue"></div></div><script>const init = (evt) => {
+      }</style></head><body><h1>zero2one</h1><h2>demo 1</h2><div><span>time: </span><span class="ani" data-startval="0" data-endval="1" data-duration="2000"></span></div><h2>demo 2</h2><div class="bars"><h3>Linear</h3><div class="bar"><div class="bar-inner bg-red" data-endval="100" data-ease="Linear" data-duration="2000"></div></div><h3>Quad.easeIn</h3><div class="bar"><div class="bar-inner bg-green" data-endval="100" data-ease="Quad.easeIn" data-duration="2000"></div></div><h3>Sine.easeOut</h3><div class="bar"><div class="bar-inner bg-blue" data-endval="100" data-ease="Sine.easeOut" data-duration="2000"></div></div><h3>Quad.easeOut</h3><div class="bar"><div class="bar-inner bg-yellow" data-endval="100" data-ease="Quad.easeOut" data-duration="2000"></div></div><h3>Cubic.easeOut</h3><div class="bar"><div class="bar-inner bg-pink" data-endval="100" data-ease="Cubic.easeOut" data-duration="2000"></div></div></div><h2>demo 3</h2><div class="box-wrapper"><div class="box bg-blue"></div></div><script>const init = (evt) => {
         if (evt) {
           document.removeEventListener('DOMContentLoaded', init);
         }
@@ -74,7 +74,7 @@
             let z2o = new Zero2One();
             let end = +h.dataset.endval || 1;
             let start = +h.dataset.startval || 0;
-            let duration = +h.dataset.duration || 2;
+            let duration = +h.dataset.duration || 2000;
 
             const delta = end - start;
             z2o.start(duration, null, (propress) => {
