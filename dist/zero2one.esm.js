@@ -24,7 +24,7 @@ var __webpack_exports__ = {};
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  c: function() { return /* binding */ zero2one; }
+  A: function() { return /* binding */ zero2one; }
 });
 
 ;// CONCATENATED MODULE: ./src/easing.js
@@ -96,12 +96,17 @@ var Zero2One = /*#__PURE__*/function () {
   function Zero2One() {
     _classCallCheck(this, Zero2One);
     _defineProperty(this, "_noop", function () {});
-    this.duration = 0;
-    this.time = 0;
-    this.curTime = 0;
-    this.then = 0;
+    this.init();
   }
   _createClass(Zero2One, [{
+    key: "init",
+    value: function init() {
+      this.duration = 0;
+      this.time = 0;
+      this.curTime = 0;
+      this.then = 0;
+    }
+  }, {
     key: "_renderloop",
     value: function _renderloop(callback) {
       var _this = this;
@@ -120,13 +125,14 @@ var Zero2One = /*#__PURE__*/function () {
           return _this._renderloop(callback);
         });
       } else {
-        window.cancelAnimationFrame(this.requestId);
+        this.stop();
       }
     }
   }, {
     key: "start",
     value: function start(duration, _easing, callback) {
       var _this2 = this;
+      this.init();
       if (!isFunction(callback)) {
         callback = this._noop;
       }
@@ -161,5 +167,5 @@ var Zero2One = /*#__PURE__*/function () {
   return Zero2One;
 }();
 /* harmony default export */ var zero2one = (Zero2One);
-var __webpack_exports__default = __webpack_exports__.c;
+var __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };

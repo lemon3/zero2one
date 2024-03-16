@@ -8,7 +8,7 @@ module.exports = {
   build: path.resolve(__dirname, '../dist'),
 
   // examples
-  examples: path.resolve(__dirname, '../examples'),
+  docs: path.resolve(__dirname, '../docs'),
 
   // Static files that get copied to build folder
   public: path.resolve(__dirname, '../public'),

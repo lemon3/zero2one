@@ -1,6 +1,5 @@
 /* global require, module */
 const paths = require('./paths');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -21,13 +20,6 @@ module.exports = {
       },
     ],
   },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: paths.src + '/index.html',
-      inject: 'body',
-    })
-  ],
 
   resolve: {
     modules: [paths.src, 'node_modules'],

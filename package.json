@@ -1,6 +1,6 @@
 {
   "name": "zero2one",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Animation, animates from 0 to 1 in a specific time with a defined acceleration (easing) function",
   "keywords": [
     "animation, tween, easing"
@@ -14,6 +14,8 @@
     "lint": "eslint 'src/**/*.js' || true",
     "prettify": "prettier --write 'src/**/*.js'",
     "dev": "webpack --mode development --watch --config config/webpack.dev.js",
+    "docs": "webpack --config config/webpack.docs.js",
+    "prebuild": "rimraf dist",
     "build": "webpack --mode production --config config/webpack.prod.js",
     "browserslistupdate": "npx update-browserslist-db@latest"
   },
@@ -37,6 +39,7 @@
     "eslint": "^8.56.0",
     "html-webpack-plugin": "^5.6.0",
     "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
     "webpack": "^5.90.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.1",

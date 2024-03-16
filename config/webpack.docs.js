@@ -5,11 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('./paths');
 
 module.exports = merge(common, {
-  mode: 'development',
-  devtool: 'inline-source-map', // 'eval-cheap-source-map',
+  mode: 'production',
 
   output: {
-    filename: '[name].js',
+    path: paths.docs,
+    filename: '[name].min.js',
     library: {
       name: 'Zero2One',
       type: 'umd',
@@ -17,16 +17,7 @@ module.exports = merge(common, {
       export: 'default',
     },
     globalObject: 'this',
-  },
-
-  // Spin up a server for quick development
-  devServer: {
-    historyApiFallback: true,
-    open: true,
-    compress: true,
-    hot: true,
-    port: 8889,
-    watchFiles: [paths.src]
+    clean: true,
   },
 
   plugins: [
@@ -35,6 +26,6 @@ module.exports = merge(common, {
       template: paths.src + '/template.html',
       minify: true,
       inject: 'body',
-    })
+    }),
   ],
 });

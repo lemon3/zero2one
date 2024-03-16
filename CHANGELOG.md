@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.2
+### Added or Changed
+- demo update
+- start method update
+
 ## v0.1.1
 ### Added or Changed
 - added an index.js file to root

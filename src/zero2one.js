@@ -10,6 +10,10 @@ const isFunction = (fn) => !!fn && 'function' === typeof fn;
 
 class Zero2One {
   constructor() {
+    this.init();
+  }
+
+  init() {
     this.duration = 0;
     this.time = 0;
     this.curTime = 0;
@@ -37,11 +41,13 @@ class Zero2One {
         this._renderloop(callback)
       );
     } else {
-      window.cancelAnimationFrame(this.requestId);
+      this.stop();
     }
   }
 
   start(duration, _easing, callback) {
+    this.init();
+
     if (!isFunction(callback)) {
       callback = this._noop;
     }
@@ -61,6 +67,7 @@ class Zero2One {
     if (this.duration <= 0) {
       return callback.call(this, 1);
     }
+
     this._renderloop((value) => callback.call(this, value));
   }
 
