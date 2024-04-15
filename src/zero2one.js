@@ -1,8 +1,3 @@
-/*!
- * (c) wolfgang jungmayer
- * www.lemon3.at
- */
-
 import { easing } from '@/easing';
 
 // helper

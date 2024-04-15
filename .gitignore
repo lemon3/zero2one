@@ -1,7 +1,12 @@
 _notes
 .DS_Store
 .phpintel
+.vscode
+*.log
+*.sublime-*
 node_modules
 package
 yarn.lock
 *.tgz
+docs
+package

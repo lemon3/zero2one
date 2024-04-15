@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.3
+### Added or Changed
+- bug fixing
+- update build tools
+
 ## v0.1.2
 ### Added or Changed
 - demo update
