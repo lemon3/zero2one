@@ -27,28 +27,36 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-      - name: Set up Node
+
+      - name: 🛠 Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: 📦 Set Up Node.js & pnpm
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build docs / demo
-        run: pnpm run docs
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: 📦 Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🏗 Build docs / demo
+        run: pnpm run demo
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload docs folder
-          path: './docs'
-      - name: Deploy to GitHub Pages
+          # Upload demo folder
+          path: './demo'
+
+      - name: 🚀 Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

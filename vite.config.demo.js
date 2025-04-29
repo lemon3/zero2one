@@ -6,8 +6,15 @@ export default defineConfig({
   base: '/zero2one/',
   build: {
     target: 'es2015', // esnext
-    outDir: 'docs',
+    outDir: resolve(__dirname, './demo'),
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, './index.html'),
+      },
+    },
   },
+
   resolve: {
     alias: [
       {

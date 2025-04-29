@@ -8,7 +8,7 @@ _notes
 dist
 node_modules
 package
-docs
+demo
 package
 
 yarn.lock
