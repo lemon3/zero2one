@@ -20,7 +20,7 @@ export default [
     ignores: [
       '!.*',
       'dist',
-      'docs',
+      'demo',
       '_notes',
       'node_modules',
       'coverage/**/*.*',

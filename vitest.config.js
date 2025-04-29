@@ -11,7 +11,7 @@ export default defineConfig({
         ...configDefaults.exclude,
         '_notes/**',
         'config/**',
-        'docs/**',
+        'demo/**',
         'test/*.bench.*',
         '.eslintrc.js',
       ],
