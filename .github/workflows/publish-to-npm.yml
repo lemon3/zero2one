@@ -9,23 +9,48 @@ on:
 
 jobs:
   publish:
+    name: Publish Package
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-      - name: Set up Node
+
+      - name: 🛠 Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: 📦 Set Up Node.js & pnpm
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
-      - run: pnpm run test
-      - run: pnpm run build
-      - uses: JS-DevTools/npm-publish@v3
-        with:
-          # dry-run: true
-          token: ${{ secrets.NPM_TOKEN }}
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: 📦 Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: ✅ Run Tests
+        run: pnpm run test
+
+      - name: 🏗 Build
+        run: pnpm run build
+
+      - name: 🚀 Publish Package
+        run: |
+          PKG_NAME=$(node -p "require('./package.json').name")
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          NPM_VERSION=$(npm show $PKG_NAME version || echo "0.0.0")
+
+          if [ "$PKG_VERSION" != "$NPM_VERSION" ]; then
+            pnpm publish --access public --no-git-checks || {
+              echo "❌ Publish failed. Dumping logs:";
+              npm whoami
+              pnpm -v
+              cat ~/.npmrc || echo "No .npmrc found"
+              exit 1
+            }
+          else
+            echo "⚠️ Version $PKG_VERSION already exists. Skipping publish."
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
