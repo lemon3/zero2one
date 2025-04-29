@@ -1,6 +1,7 @@
 {
   "name": "zero2one",
   "version": "0.1.4",
+  "packageManager": "pnpm@9.11.0",
   "description": "Animation, animates from 0 to 1 in a specific time with a defined acceleration (easing) function",
   "author": "Wolfgang Jungmayer",
   "license": "MIT",

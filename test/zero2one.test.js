@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import Zero2one from '../src/zero2one.js';
+import Zero2one from '../lib/zero2one.ts';
 
 describe('Zero2one Class tests', () => {
   test('Zero2one is Object', () => {
