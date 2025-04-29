@@ -1,64 +1,48 @@
 /*!
-* Zero2One v0.1.3
+* zero2one v0.1.4
 * https://lemon3.github.io/zero2one
 */
-var a = Object.defineProperty;
-var u = (t, s, i) => s in t ? a(t, s, { enumerable: !0, configurable: !0, writable: !0, value: i }) : t[s] = i;
-var h = (t, s, i) => (u(t, typeof s != "symbol" ? s + "" : s, i), i);
-const o = {
-  Linear: (t) => t,
-  // Pow: {},
-  Quad: {
-    easeIn: (t) => Math.pow(t, 2),
-    easeOut: (t) => 1 - Math.pow(1 - t, 2)
-  },
-  Cubic: {
-    easeIn: (t) => Math.pow(t, 3),
-    easeOut: (t) => 1 - Math.pow(1 - t, 3)
-  },
-  Sine: {
-    easeIn: (t) => 1 - Math.cos(t * Math.PI / 2),
-    easeOut: (t) => Math.sin(t * Math.PI / 2)
-  },
-  Elastic: {
-    easeOut: (t) => {
-      const s = 2 * Math.PI / 3;
-      return t === 0 || t === 1 ? t : Math.pow(2, -10 * t) * Math.sin((t * 10 - 0.75) * s) + 1;
-    }
-  }
-}, d = (t) => !!t && typeof t == "function";
-class c {
+const c = (s) => s, a = (s) => s * s, o = (s) => 1 - (1 - s) * (1 - s), u = (s) => s < 0.5 ? 2 * s * s : 1 - Math.pow(-2 * s + 2, 2) / 2, d = (s) => s * s * s, p = (s) => 1 - Math.pow(1 - s, 3), f = (s) => 1 - Math.cos(s * Math.PI / 2), w = (s) => Math.sin(s * Math.PI / 2), M = (s) => 1 + 2.70158 * Math.pow(s - 1, 3) + 1.70158 * Math.pow(s - 1, 2), I = (s) => {
+  const i = 2 * Math.PI / 3;
+  return s === 0 ? 0 : s === 1 ? 1 : Math.pow(2, -10 * s) * Math.sin((s * 10 - 0.75) * i) + 1;
+}, g = (s) => s < 0.36363636363636365 ? 7.5625 * s * s : s < 0.7272727272727273 ? 7.5625 * (s -= 0.5454545454545454) * s + 0.75 : s < 0.9090909090909091 ? 7.5625 * (s -= 0.8181818181818182) * s + 0.9375 : 7.5625 * (s -= 0.9545454545454546) * s + 0.984375, r = {
+  linear: c,
+  easeIn: a,
+  easeOut: o,
+  easeInOut: u,
+  cubicEaseIn: d,
+  cubicEaseOut: p,
+  sineEaseIn: f,
+  sineEaseOut: w,
+  backOut: M,
+  elasticOut: I,
+  bounceOut: g
+}, h = (s) => !!s && typeof s == "function";
+class l {
   constructor() {
-    h(this, "_noop", () => {
-    });
-    this.init();
+    this._noop = () => {
+    }, this.progress = 0, this.init();
   }
   init() {
-    this.duration = 0, this.time = 0, this.curTime = 0, this.then = 0;
+    this.duration = 0, this.curTime = 0, this.then = 0;
   }
-  _renderloop(s) {
-    const i = (/* @__PURE__ */ new Date()).getTime(), e = i - (this.then || i);
+  renderLoop(i) {
+    const t = (/* @__PURE__ */ new Date()).getTime(), e = t - (this.then || t);
     this.curTime += e, this.progress = this.curTime / this.duration, this.progress > 1 && (this.progress = 1);
     const n = this.easing(this.progress);
-    s(n), this.then = i, this.progress < 1 ? this.requestId = window.requestAnimationFrame(
-      () => this._renderloop(s)
+    i(n), this.then = t, this.progress < 1 ? this.requestId = window.requestAnimationFrame(
+      () => this.renderLoop(i)
     ) : this.stop();
   }
-  start(s, i, e) {
-    if (this.init(), d(e) || (e = this._noop), this.duration = +s, isNaN(this.duration) && (this.duration = 0), !i)
-      this.easing = o.Quad.easeOut;
-    else {
-      const [n, r] = i.split(".");
-      this.easing = o[n][r] || o[n];
-    }
-    if (this.duration <= 0)
+  start(i, t, e) {
+    if (this.init(), h(e) || (e = this._noop), this.duration = +i, isNaN(this.duration) && (this.duration = 0), t ? h(t) ? this.easing = t : r[t] ? this.easing = r[t] : this.easing = o : this.easing = o, this.duration <= 0)
       return e.call(this, 1);
-    this._renderloop((n) => e.call(this, n));
+    this.renderLoop((n) => e.call(this, n));
   }
   stop() {
     this.requestId && window.cancelAnimationFrame(this.requestId);
   }
 }
 export {
-  c as default
+  l as default
 };

@@ -57,6 +57,8 @@ in your terminal
 yarn add zero2one
 # or
 npm add zero2one
+# or
+pnpm add zero2one
 ```
 html element
 ```html
@@ -64,18 +66,19 @@ html element
 ```
 javascript
 ```js
-import Zero2One from "./node_modules/Zero2One/index.js";
+import Zero2One from "zero2one";
 
 const demo = document.getElementById("demo");
 if (demo) {
   const z2o = new Zero2One();
+
   const start = 1900;
   const end = 2023;
   const duration = 2000;
   const delta = end - start;
 
-  z2o.start(duration, 'Quad.easeIn', (propress) => {
-    demo.innerText = start + delta * propress << 0;
+  z2o.start(duration, 'easeIn', (progress) => {
+    demo.innerText = start + delta * progress << 0;
   });
 }
 ```

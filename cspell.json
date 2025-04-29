@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "words": [
+    "Avenir",
+    "endval",
+    "pwgen",
+    "pwkit",
+    "startval"
+  ],
+  "dictionaries": [
+    "lorem-ipsum"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    ".gitignore",
+    "pnpm-lock.yaml"
+  ]
+}

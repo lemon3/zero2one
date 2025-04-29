@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.4
+### Added or Changed
+- new easing functions added
+- converted to typescript
+
 ## v0.1.3
 ### Added or Changed
 - bug fixing
